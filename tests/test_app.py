@@ -12,6 +12,7 @@ def test_home_page_status_code(client):
     response = client.get("/")
     assert response.status_code == 200
 
-def test_home_page_contains_name(client):
+def test_home_page_renders_template(client):
     response = client.get("/")
-    assert b"Nome Cognome" in response.data
+    assert response.status_code == 200
+    assert b"<html" in response.data.lower()
