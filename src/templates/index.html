@@ -17,5 +17,23 @@
         </article>
         {% endfor %}
     </section>
+    <section>
+        <h2>Competenze</h2>
+        <ul>
+            {% for competenza in competenze %}
+            <li>{{ competenza }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Esperienze</h2>
+        {% for esperienza in esperienze %}
+        <article>
+            <h3>{{ esperienza.ruolo }} - {{ esperienza.periodo }}</h3>
+            <h4>{{ esperienza.azienda }}</h4>
+            <p>{{ esperienza.descrizione }}</p>
+        </article>
+        {% endfor %}
+    </section>
 </body>
 </html>
