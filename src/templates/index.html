@@ -8,5 +8,14 @@
     <h1>{{ nome }}</h1>
     <p>{{ ruolo }}</p>
     <p>{{ tagline }}</p>
+    <section>
+        <h2>Progetti</h2>
+        {% for progetto in progetti %}
+        <article>
+            <h3>{{ progetto.titolo }}</h3>
+            <p>{{ progetto.descrizione }}</p>
+        </article>
+        {% endfor %}
+    </section>
 </body>
 </html>

@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-
+from src.data import PROGETTI
 
 def create_app():
     app = Flask(__name__)
@@ -11,6 +11,7 @@ def create_app():
             nome="Alessandro Casamassima",
             ruolo="Full Stack Developer",
             tagline="Java, C#, TypeScript, Angular",
+            progetti=PROGETTI,
         )
 
     return app
