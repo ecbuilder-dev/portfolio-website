@@ -25,3 +25,11 @@ def test_home_page_lists_at_least_one_project(client):
     response = client.get("/")
     # verifichiamo la presenza di un contenitore di progetti, non un titolo specifico
     assert response.data.lower().count(b"<article") >= 1
+
+def test_home_page_shows_skills_section(client):
+    response = client.get("/")
+    assert b"competenze" in response.data.lower()
+
+def test_home_page_shows_experience_section(client):
+    response = client.get("/")
+    assert b"esperienze" in response.data.lower()
