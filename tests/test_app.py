@@ -45,3 +45,12 @@ def test_static_css_is_referenced(client):
 def test_static_css_file_is_served(client):
     response = client.get("/static/style.css")
     assert response.status_code == 200
+
+def test_default_locale_is_italian(client):
+    response = client.get("/")
+    assert b"lang=\"it\"" in response.data
+
+def test_english_locale_route(client):
+    response = client.get("/en/")
+    assert response.status_code == 200
+    assert b"lang=\"en\"" in response.data
