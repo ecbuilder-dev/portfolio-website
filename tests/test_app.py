@@ -37,3 +37,11 @@ def test_home_page_shows_experience_section(client):
 def test_home_page_shows_contact_link(client):
     response = client.get("/")
     assert b"mailto:" in response.data.lower()
+
+def test_static_css_is_referenced(client):
+    response = client.get("/")
+    assert b'rel="stylesheet"' in response.data
+
+def test_static_css_file_is_served(client):
+    response = client.get("/static/style.css")
+    assert response.status_code == 200
