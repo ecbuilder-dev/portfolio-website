@@ -30,16 +30,17 @@ def create_app():
             email=EMAIL_CONTATTO,
         )
 
+    def _render_localized_home(locale):
+        request.portfolio_locale = locale
+        return render_home()
 
     @app.route("/")
     def home():
-        request.portfolio_locale = "it"
-        return render_home()
+        return _render_localized_home("it")
 
     @app.route("/en/")
     def home_en():
-        request.portfolio_locale = "en"
-        return render_home()
+        return _render_localized_home("en")
 
     app.jinja_env.globals["get_locale"] = get_locale
 
