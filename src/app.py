@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from src.data import PROGETTI, COMPETENZE, ESPERIENZE
+from src.data import PROGETTI, COMPETENZE, ESPERIENZE, EMAIL_CONTATTO
 
 def create_app():
     app = Flask(__name__)
@@ -14,6 +14,7 @@ def create_app():
             progetti=PROGETTI,
             competenze=COMPETENZE,
             esperienze=ESPERIENZE,
+            email=EMAIL_CONTATTO,
         )
 
     return app

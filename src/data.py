@@ -51,3 +51,5 @@ ESPERIENZE = [
         "descrizione": "Aggiornamento software gestionale in base ai requisiti del cliente, sviluppo dell'interfaccia utente e generazione di report.",
     }
 ]
+
+EMAIL_CONTATTO = "alessandro.casamassima@gmail.com"
