@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_babel import Babel
-from src.data import PROGETTI, COMPETENZE, ESPERIENZE, EMAIL_CONTATTO
+from src.data import get_progetti, get_competenze, get_esperienze, EMAIL_CONTATTO
 
 LINGUE_SUPPORTATE = ["it", "en"]
 
@@ -19,14 +19,15 @@ def create_app():
     from flask import request
 
     def render_home():
+        locale = get_locale()
         return render_template(
             "index.html",
             nome="Alessandro Casamassima",
             ruolo="Full Stack Developer",
             tagline="Java, C#, TypeScript, Angular",
-            progetti=PROGETTI,
-            competenze=COMPETENZE,
-            esperienze=ESPERIENZE,
+            progetti=get_progetti(locale),
+            competenze=get_competenze(locale),
+            esperienze=get_esperienze(locale),
             email=EMAIL_CONTATTO,
         )
 
