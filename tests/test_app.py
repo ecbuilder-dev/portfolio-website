@@ -33,3 +33,7 @@ def test_home_page_shows_skills_section(client):
 def test_home_page_shows_experience_section(client):
     response = client.get("/")
     assert b"esperienze" in response.data.lower()
+
+def test_home_page_shows_contact_link(client):
+    response = client.get("/")
+    assert b"mailto:" in response.data.lower()
