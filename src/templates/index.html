@@ -10,7 +10,7 @@
     <p>{{ ruolo }}</p>
     <p class="tagline">{{ tagline }}</p>
     <section>
-        <h2>Progetti</h2>
+        <h2>{{ _('Progetti') }}</h2>
         {% for progetto in progetti %}
         <article>
             <h3>{{ progetto.titolo }}</h3>
@@ -19,7 +19,7 @@
         {% endfor %}
     </section>
     <section>
-        <h2>Competenze</h2>
+        <h2>{{ _('Competenze') }}</h2>
         <ul>
             {% for competenza in competenze %}
             <li>{{ competenza }}</li>
@@ -27,7 +27,7 @@
         </ul>
     </section>
     <section>
-        <h2>Esperienze</h2>
+        <h2>{{ _('Esperienze') }}</h2>
         {% for esperienza in esperienze %}
         <article>
             <h3>{{ esperienza.ruolo }} - {{ esperienza.periodo }}</h3>
@@ -37,7 +37,7 @@
         {% endfor %}
     </section>
     <section>
-        <h2>Contatti</h2>
-        <p>Per contattarmi, invia un'email a <a href="mailto:{{ email }}">{{ email }}</a>.</p>
+        <h2>{{ _('Contatti') }}</h2>
+        <p>{{_("Per contattarmi, invia un'email a") }} <a href="mailto:{{ email }}">{{ email }}</a>.</p>
 </body>
 </html>
