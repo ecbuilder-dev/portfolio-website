@@ -1,11 +1,24 @@
 from flask import Flask, render_template
+from flask_babel import Babel
 from src.data import PROGETTI, COMPETENZE, ESPERIENZE, EMAIL_CONTATTO
+
+LINGUE_SUPPORTATE = ["it", "en"]
 
 def create_app():
     app = Flask(__name__)
+    app.config["LANGUAGES"] = LINGUE_SUPPORTATE
+    app.config["BABEL_DEFAULT_LOCALE"] = "it"
 
-    @app.route("/")
-    def home():
+    babel = Babel()
+
+    def get_locale():
+        return getattr(request, "portfolio_locale", "it")
+
+    babel.init_app(app, locale_selector=get_locale)
+
+    from flask import request
+
+    def render_home():
         return render_template(
             "index.html",
             nome="Alessandro Casamassima",
@@ -16,5 +29,18 @@ def create_app():
             esperienze=ESPERIENZE,
             email=EMAIL_CONTATTO,
         )
+
+
+    @app.route("/")
+    def home():
+        request.portfolio_locale = "it"
+        return render_home()
+
+    @app.route("/en/")
+    def home_en():
+        request.portfolio_locale = "en"
+        return render_home()
+
+    app.jinja_env.globals["get_locale"] = get_locale
 
     return app
