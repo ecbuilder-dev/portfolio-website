@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <nav class="lang-switch">
+        {% if get_locale() == 'it' %}
+        <a href="/en/">English</a>
+        {% else %}
+        <a href="/">Italiano</a>
+        {% endif %}
+    </nav>
     <h1>{{ nome }}</h1>
     <p>{{ ruolo }}</p>
     <p class="tagline">{{ tagline }}</p>
