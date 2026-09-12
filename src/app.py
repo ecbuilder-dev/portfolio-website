@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_babel import Babel
-from src.data import get_progetti, get_competenze, get_esperienze, EMAIL_CONTATTO
+from src.data import load_content
 
 LINGUE_SUPPORTATE = ["it", "en"]
 
@@ -19,16 +19,17 @@ def create_app():
     from flask import request
 
     def render_home():
-        locale = get_locale()
+        content = get_locale()
+        content = load_content(content)
         return render_template(
             "index.html",
-            nome="Alessandro Casamassima",
-            ruolo="Full Stack Developer",
-            tagline="Java, C#, TypeScript, Angular",
-            progetti=get_progetti(locale),
-            competenze=get_competenze(locale),
-            esperienze=get_esperienze(locale),
-            email=EMAIL_CONTATTO,
+            nome=content["nome"],
+            ruolo=content["ruolo"],
+            tagline=content["tagline"],
+            progetti=content["progetti"],
+            competenze=content["competenze"],
+            esperienze=content["esperienze"],
+            email=content["email"],
         )
 
     def _render_localized_home(locale):

@@ -1,0 +1,62 @@
+nome: Alessandro
+ruolo: Full Stack Developer
+tagline: Java, C#, TypeScript, Angular
+email: alessandro.casamassima@gmail.com
+
+progetti:
+  - titolo: KonaKart
+    descrizione: E-commerce platform based on Java designed for managing online stores of medium and large size.
+  - titolo: Reporting Studio
+    descrizione: Advanced reporting system with graphical customization integrated within the Mago management software ecosystem.
+  - titolo: LR Documentation Exporter
+    descrizione: Tool for exporting documentation from a Liferay portal.
+
+competenze:
+  - Java 8
+  - C#
+  - TypeScript
+  - Angular
+  - JavaScript
+  - React
+  - CSS
+  - SQL
+  - Docker
+  - Podman
+  - HTML
+  - Git
+  - C++
+  - Maven
+  - Ant
+  - SVN
+  - Apache Tomcat
+  - Eclipse
+  - IntelliJ IDEA
+  - Visual Studio Code
+  - Visual Studio
+  - Spring Boot 2
+  - DBeaver
+  - Postman
+  - JUnit 4
+  - OpenXML
+
+esperienze:
+  - ruolo: Full Stack Developer
+    azienda: Zucchetti S.p.A.
+    periodo: December 2020 - Present
+    descrizione: Development of web and desktop applications for management software, with a focus on Java, C#, and front-end technologies such as Angular.
+  - ruolo: IT Consultant / Engineer
+    azienda: Altran Italia S.p.A.
+    periodo: March 2015 - November 2020
+    descrizione: Collaboration in the development of customized software solutions for corporate clients, participating in all phases of the software development lifecycle.
+  - ruolo: IT Consultant
+    azienda: Network Integrations and Solutions S.r.l.
+    periodo: October 2008 - February 2015
+    descrizione: Collaboration in the development of customized software solutions for corporate clients, participating in all phases of the software development lifecycle.
+  - ruolo: Java Developer
+    azienda: Avelco Italia S.r.l.
+    periodo: January 2008 - October 2008
+    descrizione: Porting of software modules and components from a legacy management system to a web application.
+  - ruolo: Cobol Junior Developer
+    azienda: Omnia Informatica S.r.l.
+    periodo: April 2007 - December 2007
+    descrizione: Updating management software based on client requirements, developing the user interface, and generating reports.

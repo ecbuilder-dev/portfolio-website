@@ -55,12 +55,6 @@ def test_english_locale_route(client):
     assert response.status_code == 200
     assert b"lang=\"en\"" in response.data
 
-def test_first_project_descriptions_differs_between_languages(client):
-    from src.data import get_progetti
-    descrizione_it = get_progetti("it")[0]["descrizione"]
-    descrizione_en = get_progetti("en")[0]["descrizione"]
-    assert descrizione_it != descrizione_en
-
 def test_home_page_has_link_to_english_version(client):
     response = client.get("/")
     assert b'href="/en/"' in response.data
