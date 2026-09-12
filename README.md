@@ -20,3 +20,10 @@ python run.py
 ```bash
 pytest
 ```
+
+## Modificare i contenuti
+I testi del sito (nome, ruolo, progetti, competenze, esperienze, email) si trovano in:
+- `content/it.yaml` (versione italiana)
+- `content/en.yaml` (versione inglese)
+
+Modifica questi file, poi fai commit e push: Render effettuerà il deploy automaticamente.
